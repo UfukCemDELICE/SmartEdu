@@ -1,9 +1,6 @@
-<%- include('partials/_header'); -%>
-	<!-- END LOADER -->	
+<%- include('partials/_header'); %>
 
-    <!-- Start header -->
-	<%- include('partials/_navigation'); -%>
-	<!-- End header -->
+<%- include('partials/_navigation'); %>
 	
 	<div class="all-title-box">
 		<div class="container text-center">
@@ -14,21 +11,26 @@
     <div id="overviews" class="section wb">
         <div class="container">
             <div class="row"> 
-				
+
                 <div class="col-lg-9 blog-post-single">
 					<% if (flashMessages) { %>
+
+
 						<% if (flashMessages.success) { %>
 							<div class="alert alert-success">
 								<%= flashMessages.success %>
 							</div>
-						<%} else if (flashMessages.error) { %>
+	
+						<% } else if (flashMessages.error) { %>
 							<div class="alert alert-danger">
 								<%= flashMessages.error %>
 							</div>
 						<% } %>
+	
 					<% } %>
-			 	<div class="row"> 
-			<% for(let i = 0; i< courses.length; i++) { %>
+				<div class="row"> 
+
+			<% for (let i=0; i< courses.length; i++) { %>
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="course-item mb-5">
 						<div class="image-blog">
@@ -36,7 +38,7 @@
 						</div>
 						<div class="course-br">
 							<div class="course-title">
-								<h2><a href="/courses/<%= courses[i].slug %>" title=""><%= courses[i].name%></a></h2>
+								<h2><a href="/courses/<%= courses[i].slug %>" title=""><%= courses[i].name %></a></h2>
 							</div>
 							<div class="course-desc">
 								<p><%= courses[i].description.substring(0, 100) + "..." %></p>
@@ -49,9 +51,11 @@
 						</div>
 					</div>
                 </div><!-- end col -->
-				<% } %>
+
+			<% } %>
+	
             </div><!-- end row -->
-			
+					
                 </div><!-- end col -->
 				<div class="col-lg-3 col-12 right-single">
 					<div class="widget-search">
@@ -67,9 +71,9 @@
 					<div class="widget-categories">
 						<h3 class="widget-title">Categories</h3>
 						<ul>
-							<% for(let i = 0; i< categories.length; i++) { %>
-							<li><a href="/courses?categories=<%=categories[i].slug %>"><%= categories[i].name %></a></li>
-							<% } %>
+							<% for (let i=0; i< categories.length; i++) { %>
+							<li><a href="/courses?categories=<%= categories[i].slug %>"><%= categories[i].name %></a></li>
+							<% } %>	
 						</ul>
 					</div>
 				</div>
@@ -78,12 +82,4 @@
     </div><!-- end section -->
 
 
-	<%- include('partials/_footer'); -%>
-
-    <!-- ALL JS FILES -->
-    <script src="js/all.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="js/custom.js"></script>
-
-</body>
-</html>
+	<%- include('partials/_footer'); %>
